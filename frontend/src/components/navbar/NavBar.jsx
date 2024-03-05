@@ -17,6 +17,8 @@ function NavBar() {
             </ul>
             </div>
             </header>
+=======
+            {/* Navbar */}
         </>
     )
 }

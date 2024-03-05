@@ -1,23 +1,38 @@
 import "./App.css";
-import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from "react-router-dom";
+import Navbar from "./components/navbar/NavBar"
+import Footer from "./components/footer/Footer"
 import LandingPage from "./pages/LandingPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
-import Layout from "./Layout";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
+import ProfileFormPage from "./pages/ProfileFormPage";
+import ProfilePage from "./pages/ProfilePage";
+import MyActivityPage from "./pages/MyActivityPage";
+import AddRequestPage from "./pages/AddRequestPage";
 
 export default function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Layout />}>
-        <Route path="" element={<LandingPage />} />
-        <Route path="register" element={<RegisterPage />} />
-        <Route path="login" element={<LoginPage />} />
+      <Route>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
+        <Route path="/profile-form" element={<ProfileFormPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/my-activity" element={<MyActivityPage />} />
+        <Route path="/add-request" element={<AddRequestPage />} />
       </Route>
     )
   )
 
   return (
-    <RouterProvider router={router} />
+    <>
+      <Navbar />
+      <RouterProvider router={router} />
+      <Footer />
+    </>
   )
 }
