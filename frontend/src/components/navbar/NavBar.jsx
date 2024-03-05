@@ -1,26 +1,26 @@
-
+import AnchorLink from "react-anchor-link-smooth-scroll"
+// import MenuIcon from '@mui/icons-material/Menu';
 
 function NavBar() {
     return (
-        <>
-        <header>
-            <div id="navbar-container">
-            <img src="" alt="logo" id="nav-logo" />
-            <h3>DonorConnect</h3>
-            <ul id="navbar-ul">
-                <li class="navbar-list">Home</li>
-                <li class="navbar-list">About</li>
-                <li class="navbar-list">Success Stories</li>
-                <li class="navbar-list">Events</li>
-                <li class="navbar-list">Educational Resources</li>
-                <li class="navbar-list">Contact Us</li>
-            </ul>
+        <nav className="navbar-container">
+            <div className="logo-container">
+                <img className="logo-img" src=""/>
             </div>
-            </header>
-=======
-            {/* Navbar */}
-        </>
+            <div className="nav-links">
+                <AnchorLink href="#home">Home</AnchorLink>
+                <AnchorLink href="#about">About</AnchorLink>
+                <AnchorLink href="#success-stories">Success Stories</AnchorLink>
+                <AnchorLink href="#events">Events</AnchorLink>
+                <AnchorLink href="#educational-resources">Educational Resources</AnchorLink>
+                <AnchorLink href="#contact">Contact</AnchorLink>
+            </div>
+            {/* <div className="hamburger-container">
+                <MenuIcon/>
+            </div> */}
+        </nav>
     )
 }
 
 export default NavBar
+

@@ -3,6 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } 
 import Navbar from "./components/navbar/NavBar"
 import Footer from "./components/footer/Footer"
 import LandingPage from "./pages/LandingPage";
+import EducationalResourcesPage from "./pages/EducationalResourcesPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
@@ -17,6 +18,7 @@ export default function App() {
     createRoutesFromElements(
       <Route>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/educational-resources" element={<EducationalResourcesPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
