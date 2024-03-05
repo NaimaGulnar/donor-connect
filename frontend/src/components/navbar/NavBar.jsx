@@ -1,7 +1,7 @@
 function NavBar() {
     return (
         <>
-            {/* yahan pe */}
+            {/* Navbar */}
         </>
     )
 }

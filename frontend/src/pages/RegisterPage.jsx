@@ -1,10 +1,12 @@
-function RegisterPage() {
+import RegLoginPgImg from "../components/register-login-page-components/RegLoginPgImg"
+import RegPageForm from "../components/register-login-page-components/RegPageForm"
+
+export default function RegisterPage() {
     return (
-        <div>
-            Register Page
+        <div className="register-page-container">
+            <RegLoginPgImg />
+            <RegPageForm />
         </div>
     )
 }
-
-export default RegisterPage
 
