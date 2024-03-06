@@ -1,26 +1,33 @@
-import AnchorLink from "react-anchor-link-smooth-scroll"
-// import MenuIcon from '@mui/icons-material/Menu';
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 function NavBar() {
+    const [navOpen, setNavOpen] = useState(false);
+
     return (
-        <nav className="navbar-container">
-            <div className="logo-container">
-                <img className="logo-img" src=""/>
-            </div>
-            <div className="nav-links">
-                <AnchorLink href="#home">Home</AnchorLink>
-                <AnchorLink href="#about">About</AnchorLink>
-                <AnchorLink href="#success-stories">Success Stories</AnchorLink>
-                <AnchorLink href="#events">Events</AnchorLink>
-                <AnchorLink href="#educational-resources">Educational Resources</AnchorLink>
-                <AnchorLink href="#contact">Contact</AnchorLink>
-            </div>
-            {/* <div className="hamburger-container">
-                <MenuIcon/>
-            </div> */}
-        </nav>
-    )
+        <header>
+            <nav className="navbar-container">
+                <NavLink to="/">
+                    <img className="logo-img" src="" alt="Logo" />
+                </NavLink>
+                <div className={navOpen ? "resp-nav-links" : "nav-links"}>
+                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="#about">About</NavLink>
+                    <NavLink to="#success-stories">Success Stories</NavLink>
+                    <NavLink to="#events">Events</NavLink>
+                    <NavLink to="/educational-resources">Educational Resources</NavLink>
+                    <NavLink to="#contact">Contact</NavLink>
+                </div>
+                <div className="hamburger-container" onClick={() => setNavOpen(prev => !prev)}>
+                    {
+                        navOpen ? <CloseIcon /> : <MenuIcon />
+                    }
+                </div>
+            </nav>
+        </header>
+    );
 }
 
-export default NavBar
-
+export default NavBar;

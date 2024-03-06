@@ -1,3 +1,6 @@
+/* ---------------------- FOR LARGE-SIZED SCREENS ---------------------------- */
+
+
 /* -------- Declaring Variables --------- */
 :root {
   /* ------- COLORS -------- */
@@ -61,6 +64,13 @@
 body {
   background-color: var(--light-red);
   font-family: "Poppins", sans-serif;
+}
+/* -------- Navbar ------- */
+.nav-links{
+  display: flex;
+}
+.hamburger-container {
+  display: none;
 }
 /* -------- Register Page & Log In Page------- */
 .register-page-container,
