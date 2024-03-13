@@ -1,42 +1,55 @@
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
+import logo1 from "../../assets/logo1.jpg"
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { dialogContentClasses } from "@mui/material";
+
 
 function Footer() {
     const year = new Date().getFullYear();
     return (
-        <footer id="contact" className="footer-container">
-            <form className="newsletter-container">
-                <h3>Subscribe to our Newsletter</h3>
-                <input type="text" placeholder="Enter your Email-id" />
-                <button>Submit</button>
-            </form>
-            <div className="footer-content">
-                <div className="company-name">
-                    <h3>DonorConnect</h3>
-                    <p>Save a Life !!</p>
+
+        <footer >
+
+            <div id="contact" className="footer-container">
+                <div className="company-name foot">
+                    <img src={logo1} alt="logo" className="footer-logo" />
+                    <p><h2>DonorConnect</h2>
+                        Join the lifesaving mission.<br />
+                        " &#129656;.......Donate blood.......&#129656;"</p>
                 </div>
-                <div className="nav-links-container">
-                    <h3>Useful Links</h3>
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="#about">About</NavLink>
-                    <NavLink to="#success-stories">Success Stories</NavLink>
-                    <NavLink to="#events">Events</NavLink>
-                    <NavLink to="/educational-resources">Educational Resources</NavLink>
+                <div className="nav-links-container foot">
+                    <h2>Links</h2>
+                    <ul>
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="#about">About</NavLink></li>
+                        <li> <NavLink to="#success-stories">Success Stories</NavLink></li>
+                        <li> <NavLink to="#events">Events</NavLink></li>
+                        <li><NavLink to="/educational-resources">Educational Resources</NavLink></li>
+                    </ul>
                 </div>
-                <div className="social-links-container">
-                    <h3>Social Links</h3>
-                    <Link to="mailto:perweenm57@gmail.com" target="_blank"><EmailIcon /></Link>
-                    <Link to="https://www.linkedin.com/in/muskanperween/" target="_blank"><LinkedInIcon /></Link>
-                    <Link to="https://github.com/Muskan-FATIMA" target="_blank"><GitHubIcon /></Link>
+                <div className="foot">
+                    <h2>Newsletter</h2>
+                    <form className="newsletter-container">
+                        <MailOutlineIcon />
+                        <input type="email" placeholder="Enter your email-id..." required />
+                        <button type="submit"><ArrowForwardIcon /></button>
+                    </form>
+                    <div className="social-links-container ">
+                        <h3>Social Links</h3>
+                        <i><Link to="mailto:perweenm57@gmail.com" target="_blank" className="footer-email"><EmailIcon /></Link></i>
+                        <Link to="https://www.linkedin.com/in/muskanperween/" target="_blank" className="footer-linkedin"><LinkedInIcon /></Link>
+                        <Link to="https://github.com/Muskan-FATIMA" target="_blank" className="footer-github"><GitHubIcon /></Link>
+                    </div>
                 </div>
             </div>
-            <div className="copyright-container">
-                <p>&copy; {year} | DonorConnect | All Rights Reserved.</p>
-            </div>
-        </footer>
+            <hr />
+            <p className="copyright"> Copyright &copy; {year} | DonorConnect | All Rights Reserved.</p>
+        </footer >
     )
 }
 

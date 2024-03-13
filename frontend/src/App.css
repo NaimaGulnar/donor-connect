@@ -1,12 +1,11 @@
 /* ---------------------- FOR LARGE-SIZED SCREENS ---------------------------- */
 
-
 /* -------- Declaring Variables --------- */
 :root {
   /* ------- COLORS -------- */
-  --dark-red: rgb(79, 7, 7);
-  --light-red: rgb(238, 191, 191);
-  --white: rgb(255, 255, 255);
+  --dark-red: rgb(232, 17, 35);
+  --light-red: rgb(255, 18, 22);
+  --white: rgb(255, 253, 255);
   --black: rgb(0, 0, 0);
   /* ------- HEIGHT -------- */
   --height-80: 80vh;
@@ -62,16 +61,206 @@
   box-sizing: border-box;
 }
 body {
-  background-color: var(--light-red);
+  color: var(--black);
+  background-color: var(--white);
   font-family: "Poppins", sans-serif;
 }
 /* -------- Navbar ------- */
-.nav-links{
+
+/* .navbar-container {
+  width: 100vw;
+  background-color: var(--white);
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  top: 0;
+  position: sticky;
 }
+.logo-img {
+  width: 100px;
+  margin: 1rem;
+}
+
+.hamburger-container {
+  /* display: none; */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  padding: 0.5rem 5%;
+  background: var(--white);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-shadow: var(--box-shadow);
+}
+
+.logo-img {
+  width: 8rem;
+  position: relative;
+  cursor: pointer;
+  animation: slideRight 1s ease forwards;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 0 3rem 0 1rem;
+  color: var(--black);
+  font-weight: 500;
+  transition: 0.3s;
+  animation: slideTop 0.5s ease forwards;
+}
+
+.nav-links a:hover {
+  color: var(--dark-red);
+}
+
 .hamburger-container {
   display: none;
+  color: var(--black);
 }
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/*---------Footer--------------------------*/
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 100px 0 30px;
+  font-size: 13px;
+}
+
+.footer-container {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.foot {
+  flex-basis: 30%;
+  padding: 10px;
+}
+
+.foot:nth-child(3) {
+  flex-basis: 40%;
+}
+
+.footer-logo {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: var(--black);
+}
+ul li a:hover {
+  color: var(--dark-red);
+  font-weight: 500;
+}
+
+form {
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  margin-bottom: 50px;
+}
+.newsletter-container svg {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.foot h2 {
+  margin-bottom: 20px;
+}
+
+form input {
+  width: 100%;
+  background-color: transparent;
+  color: #181818;
+  border: 0;
+  outline: none;
+}
+
+form button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+hr {
+  width: 90%;
+  border: 0;
+  border-bottom: 1px solid var(--black);
+  margin: 20px auto;
+}
+.copyright {
+  text-align: center;
+}
+.social-links-container h3 {
+  margin-bottom: 20px;
+}
+.social-links-container svg {
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+}
+.social-links-container svg:hover {
+  transform: scale(1.01) translateY(-5px);
+}
+.footer-email {
+  color: var(--black);
+}
+
+.footer-linkedin {
+  color: var(--black);
+}
+.footer-github {
+  color: var(--black);
+}
+
 /* -------- Register Page & Log In Page------- */
 .register-page-container,
 .login-page-container {

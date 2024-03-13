@@ -1,6 +1,6 @@
 function WelcomeSection() {
     return (
-        <div>
+        <div >
             Welcome
         </div>
     )

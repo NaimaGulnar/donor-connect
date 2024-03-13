@@ -3,9 +3,9 @@
 /* -------- Declaring Variables --------- */
 :root {
   /* ------- COLORS -------- */
-  --dark-red: rgb(79, 7, 7);
-  --light-red: rgb(238, 191, 191);
-  --white: rgb(255, 255, 255);
+  --dark-red: rgb(232, 17, 35);
+  --light-red: rgb(255, 18, 22);
+  --white: rgb(255, 253, 255);
   --black: rgb(0, 0, 0);
   /* ------- HEIGHT -------- */
   --height-80: 80vh;
@@ -56,15 +56,95 @@
   --box-shadow: 4px 4px 10px 0 var(--black);
 }
 /* -------- For screens of size less than 768 px ------- */
-@media screen and (max-width: 768px) {
-  /* -------- Navbar ------- */
-  .nav-links {
-    display: none;
+@media screen and (max-width: 1290px) {
+  header {
+    padding: 0.5rem 0 0.5rem 0;
   }
-  .resp-nav-links {
-    display: flex;
+  .nav-links a {
+    margin: 0 2rem 0 1rem;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .nav-links a {
+    margin: 0 1.2rem 0 0.5rem;
+  }
+}
+@media screen and (max-width: 9650px) {
+  .logo-img {
+    width: 7rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    padding: 1rem 1%;
+  }
+
+  .logo-img {
+    margin-top: 0.2rem;
+    margin-right: 1rem;
+    padding-left: 0;
+  }
+  .hamburger-container svg {
+    width: 3rem;
+    font-size: 2.5rem;
   }
   .hamburger-container {
     display: flex;
+    padding: 1rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .navbar-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+  }
+  .resp-nav-links {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .resp-nav-links a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    color: var(--black);
+    font-weight: 500;
+    transition: 0.5s;
+    animation: slideTop 0.5s ease forwards;
+  }
+  .resp-nav-links a:hover {
+    color: var(--dark-red);
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/*------------Footer---------------*/
+
+@media screen and (max-width: 800px) {
+  footer {
+    bottom: unset;
+  }
+  .foot {
+    flex-basis: 100%;
+  }
+
+  .foot:nth-child(3) {
+    flex-basis: 100%;
   }
 }
