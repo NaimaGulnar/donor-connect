@@ -3,16 +3,17 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import logo from "../../assets/logo.jpg";
+import logo from "../../assets/logo-new.png";
 
 function NavBar() {
     const [navOpen, setNavOpen] = useState(false);
 
     return (
         <header>
-
             <Link to="/">
-                <img className="logo-img" src={logo} alt="Logo" />
+                <div className="logo-container">
+                    <img className="logo-img" src={logo}  alt="Logo" />
+                </div>
             </Link>
             <div className="hamburger-container" onClick={() => setNavOpen(prev => !prev)}>
                 {

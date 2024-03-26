@@ -1,10 +1,10 @@
 /* ---------------------- FOR LARGE-SIZED SCREENS ---------------------------- */
 
-/* -------- Declaring Variables --------- */
+/* -------- Declaring Variables Start --------- */
 :root {
   /* ------- COLORS -------- */
-  --dark-red: rgb(232, 17, 35);
-  --light-red: rgb(255, 18, 22);
+  --dark-color: #7a0a0a;
+  --light-color: #fbeada;
   --white: rgb(255, 253, 255);
   --black: rgb(0, 0, 0);
   /* ------- HEIGHT -------- */
@@ -53,80 +53,67 @@
   /* ------- TRANSITION -------- */
   --transition-duration: 0.3s;
   /* ------- BOX-SHADOW -------- */
-  --box-shadow: 4px 4px 10px 0 var(--black);
+  --box-shadow: 4px 4px 10px 0 var(--dark-color);
 }
+/* -------- Declaring Variables End --------- */
+
+/* -------- Root ------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* -------- Body ------- */
 body {
-  color: var(--black);
-  background-color: var(--white);
   font-family: "Poppins", sans-serif;
 }
+
 /* -------- Navbar ------- */
-
-/* .navbar-container {
-  width: 100vw;
-  background-color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 80px;
-  top: 0;
-  position: sticky;
-}
-.logo-img {
-  width: 100px;
-  margin: 1rem;
-}
-
-.hamburger-container {
-  /* display: none; */
-
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   height: 10vh;
-  padding: 0.5rem 5%;
-  background: var(--white);
+  padding: 2% 10%;
+  background: var(--light-color);
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  box-shadow: var(--box-shadow);
+  box-shadow: 4px 4px 10px 0 var(--dark-color);
 }
-
+.logo-container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .logo-img {
-  width: 8rem;
-  position: relative;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
   animation: slideRight 1s ease forwards;
 }
-
 .nav-links a {
   text-decoration: none;
   font-size: 1.2rem;
-  margin: 0 3rem 0 1rem;
-  color: var(--black);
-  font-weight: 500;
+  margin: 0 1.2rem;
+  color: var(--dark-color);
+  font-weight: 600;
   transition: 0.3s;
   animation: slideTop 0.5s ease forwards;
 }
-
 .nav-links a:hover {
-  color: var(--dark-red);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
-
 .hamburger-container {
   display: none;
-  color: var(--black);
+  color: var(--dark-color);
 }
-
 @keyframes slideRight {
   0% {
     transform: translateX(-100px);
@@ -137,7 +124,6 @@ header {
     opacity: 1;
   }
 }
-
 @keyframes slideTop {
   0% {
     transform: translateY(100px);
@@ -149,18 +135,114 @@ header {
   }
 }
 
-/*---------Footer--------------------------*/
+/* -------- Welcome Section ------- */
+.welcome-section-main-container {
+  background-image: url("../src/assets/welcome-bg-img.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+.welcome-content {
+  width: 50%;
+  padding-right: 6%;
+}
+.welcome-content h1 {
+  color: var(--light-color);
+  text-shadow: 1px 1px 2px var(--dark-color);
+  font-size: 3.2rem;
+  line-height: 1.1;
+}
+.welcome-content span {
+  color: var(--dark-color);
+  text-shadow: 2px 2px 4px var(--light-color);
+  font-size: 4rem;
+  font-weight: bold;
+}
+.welcome-para1 {
+  color: var(--light-color);
+  text-shadow: 1px 1px 2px var(--dark-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+/* .welcome-para2 {
+  color: var(--light-color);
+  text-shadow: 1px 1px 2px var(--dark-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-top: 8%;
+} */
+.welcome-section-btns {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 5%;
+}
+.welcome-section-register-btn {
+  background-color: transparent;
+  border: 3px solid var(--light-color);
+  padding: 3% 6%;
+  margin-right: 10px;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  transition: 0.3s;
+}
+.welcome-section-register-btn a{
+  color: var(--light-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+.welcome-section-register-btn:hover {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+  border: 3px solid var(--dark-color);
+}
+.welcome-section-login-btn {
+  background-color: transparent;
+  border: 3px solid var(--light-color);
+  padding: 3% 8%;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  transition: 0.3s;
+}
+.welcome-section-login-btn a{
+  color: var(--light-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+.welcome-section-login-btn:hover {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+  border: 3px solid var(--dark-color);
+}
+.welcome-img {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items:end;
+}
+.welcome-img img{
+  width: 70%;
+  height: 70%;
+}
 
+/* -------- Footer ------- */
 footer {
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  background-color: var(--white);
+  background-color: var(--light-color);
   color: var(--black);
   padding: 100px 0 30px;
   font-size: 13px;
 }
-
 .footer-container {
   width: 85%;
   margin: auto;
@@ -169,26 +251,21 @@ footer {
   align-items: flex-start;
   justify-content: space-between;
 }
-
 .foot {
   flex-basis: 30%;
   padding: 10px;
 }
-
 .foot:nth-child(3) {
   flex-basis: 40%;
 }
-
 .footer-logo {
   width: 80px;
   margin-bottom: 20px;
 }
-
 ul li {
   list-style: none;
   margin-bottom: 10px;
 }
-
 ul li a {
   text-decoration: none;
   color: var(--black);
@@ -197,7 +274,6 @@ ul li a:hover {
   color: var(--dark-red);
   font-weight: 500;
 }
-
 form {
   padding-bottom: 15px;
   display: flex;
@@ -210,11 +286,9 @@ form {
   font-size: 18px;
   margin-right: 15px;
 }
-
 .foot h2 {
   margin-bottom: 20px;
 }
-
 form input {
   width: 100%;
   background-color: transparent;
@@ -222,14 +296,12 @@ form input {
   border: 0;
   outline: none;
 }
-
 form button {
   background: transparent;
   border: none;
   outline: none;
   cursor: pointer;
 }
-
 hr {
   width: 90%;
   border: 0;
@@ -253,7 +325,6 @@ hr {
 .footer-email {
   color: var(--black);
 }
-
 .footer-linkedin {
   color: var(--black);
 }
@@ -264,7 +335,7 @@ hr {
 /* -------- Register Page & Log In Page------- */
 .register-page-container,
 .login-page-container {
-  border: 2px solid var(--dark-red);
+  border: 2px solid var(--dark-color);
   border-radius: var(--border-radius);
   display: flex;
   justify-content: center;
@@ -282,7 +353,7 @@ hr {
 }
 .reg-login-logo {
   border-radius: var(--circle-container);
-  background-color: var(--dark-red);
+  background-color: var(--dark-color);
   width: var(--width-half-container);
   height: var(--width-half-container);
   display: flex;
@@ -293,16 +364,16 @@ hr {
   transition: var(--transition-duration);
 }
 .reg-login-logo:hover {
-  background-color: var(--light-red);
+  background-color: var(--light-color);
   box-shadow: var(--box-shadow);
-  color: var(--dark-red);
+  color: var(--dark-color);
 }
 .reg-login-logo h1 {
   text-align: center;
 }
 .register-page-form-container,
 .login-page-form-container {
-  background-color: var(--dark-red);
+  background-color: var(--dark-color);
   height: var(--height-full-container);
   width: var(--width-half-container);
   color: var(--white);
@@ -338,16 +409,16 @@ hr {
   border: none;
   font-size: var(--medium-font-size);
   font-weight: var(--bolder-font-weight);
-  color: var(--dark-red);
-  background-color: var(--light-red);
+  color: var(--dark-color);
+  background-color: var(--light-color);
   cursor: pointer;
   box-shadow: var(--box-shadow);
   transition: var(--transition-duration);
 }
 .register-btn:hover,
 .login-btn:hover {
-  background-color: var(--dark-red);
-  color: var(--light-red);
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 .already-acc,
 .no-acc {
@@ -357,7 +428,7 @@ hr {
 }
 .already-acc a,
 .no-acc a {
-  color: var(--light-red);
+  color: var(--light-color);
   letter-spacing: var(--letter-spacing-less);
   margin-left: var(--margin-point3);
   transition: var(--transition-duration);
@@ -373,15 +444,15 @@ hr {
   cursor: pointer;
 }
 .forgot-password a {
-  color: var(--light-red);
+  color: var(--light-color);
   transition: var(--transition-duration);
 }
 .forgot-password a:hover {
-  color: var(--white);
+  color: var(--dark-color);
 }
 /* -------- Reset Password Page ------- */
 .reset-password-page-container {
-  background-color: var(--dark-red);
+  background-color: var(--dark-color);
   color: var(--white);
   border-radius: var(--border-radius);
   margin: var(--margin-6) var(--margin-auto);

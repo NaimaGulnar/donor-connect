@@ -1,10 +1,10 @@
 /* ---------------------- FOR SMALL-SIZED SCREENS ---------------------------- */
 
-/* -------- Declaring Variables --------- */
+/* -------- Declaring Variables Start --------- */
 :root {
   /* ------- COLORS -------- */
-  --dark-red: rgb(232, 17, 35);
-  --light-red: rgb(255, 18, 22);
+  --dark-color: #7a0a0a;
+  --light-color: #fbeada;
   --white: rgb(255, 253, 255);
   --black: rgb(0, 0, 0);
   /* ------- HEIGHT -------- */
@@ -53,9 +53,11 @@
   /* ------- TRANSITION -------- */
   --transition-duration: 0.3s;
   /* ------- BOX-SHADOW -------- */
-  --box-shadow: 4px 4px 10px 0 var(--black);
+  --box-shadow: 4px 4px 10px 0 var(--dark-color);
 }
-/* -------- For screens of size less than 768 px ------- */
+/* -------- Declaring Variables End --------- */
+
+/* -------- Navbar ------- */
 @media screen and (max-width: 1290px) {
   header {
     padding: 0.5rem 0 0.5rem 0;
@@ -74,12 +76,10 @@
     width: 7rem;
   }
 }
-
 @media screen and (max-width: 900px) {
   header {
     padding: 1rem 1%;
   }
-
   .logo-img {
     margin-top: 0.2rem;
     margin-right: 1rem;
@@ -122,7 +122,6 @@
     color: var(--dark-red);
   }
 }
-
 @keyframes slideTop {
   0% {
     transform: translateY(100px);
@@ -134,8 +133,77 @@
   }
 }
 
-/*------------Footer---------------*/
+/* -------- Welcome Section ------- */
+@media screen and (max-width: 1024px) {
+  .welcome-section-main-container {
+  padding: 0 5%;
+  }
+  .welcome-content h1{
+    font-size: 2.5rem;
+  }
+  .welcome-content span {
+    font-size: 3.1rem;
+  }
+  .welcome-para1 {
+    font-size: 1.2rem;
+  }
+  .welcome-section-register-btn, .welcome-section-login-btn{
+    padding: 3% 5%;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .welcome-content{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .welcome-content h1{
+    font-size: 2.7rem;
+  }
+  .welcome-content span {
+    font-size: 3.5rem;
+  }
+  .welcome-para1 {
+    font-size: 1.5rem;
+  }
+  .welcome-section-btns{
+    justify-content: center;
+    width: 100%;
+  }
+  .welcome-section-register-btn, .welcome-section-login-btn{
+    padding: 2% 5%;
+    font-size: 1.4rem;
+  }
+  .welcome-img{
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .welcome-content h1{
+    font-size: 2.5rem;
+  }
+  .welcome-content span {
+    font-size: 3rem;
+  }
+  .welcome-para1 {
+    font-size: 1.2rem;
+  }
+  .welcome-section-btns {
+    flex-direction: column;
+  }
+  .welcome-section-register-btn, .welcome-section-login-btn{
+    font-size: 1.2rem;
+    padding: 3% 6%;
+    margin: 0 0 3% 0;
+  }
+}
 
+/*------------Footer---------------*/
 @media screen and (max-width: 800px) {
   footer {
     bottom: unset;
@@ -143,7 +211,6 @@
   .foot {
     flex-basis: 100%;
   }
-
   .foot:nth-child(3) {
     flex-basis: 100%;
   }
